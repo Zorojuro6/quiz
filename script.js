@@ -1,0 +1,8 @@
+const questions =[
+    {texte: "Quelle est la capitale du Canada ?", choix: ["Vancouver", "Ottawa", "Toronto", "Montréal"], bonne: 1},
+    {texte: "Quel langage est principalement utilisé pour structurer une page web ?", choix: ["Java", "Python", "HTML", "CSS"], bonne: 2},
+    {texte: "Le Soleil est une planète.", choix: ["Vrai", "Faux"], bonne: 1},
+];
+
+document.querySelector("#question").textContent = questions[1].texte;
+console.log(questions[1].choix[questions[1].bonne]);
