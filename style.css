@@ -1,0 +1,58 @@
+:root{
+    --fond: #111;
+    --texte: #f5f5f5;
+    --accent: #2b5fd9;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sytem-ui, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    margin: 0;
+}
+
+main{
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#reponses{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+button{
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--accent);
+    border-radius: 0.5rem;
+    background: white;
+    color: var(--accent);
+    cursor: pointer;
+}
+
+button:hover{
+    background: var(--accent);
+    color: white;
+}
+
+button:focus-visible{
+    outline: 3px solid var(--texte);
+    outline-offset: 2px;
+}
+
+button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#retour{
+    font-weight: bold;
+    min-height: 1.5rem;
+}
