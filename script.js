@@ -1,4 +1,4 @@
-const questions = [];
+let questions = [];
 
 async function demarrer() {
     try {
@@ -55,10 +55,20 @@ function repondre (q, position) {
     boutonSuivant.focus();
 }
 
+function messageFinal(score, total) {
+    if(score === total) {
+     return "Parfait !";
+    } else if (score >= total/2) {
+     return "Bien joué, tu peux encore progresser.";
+    } else {
+     return "Relis tes notes et réessaie.";
+    }
+}
+
 function terminer() {
     zoneQuestion.textContent = "Quiz terminé !";
     zoneReponses.textContent = "";
-    zoneRetour.textContent = `Score : ${score} sur ${questions.length}`;
+    zoneRetour.textContent = `Score : ${score} sur ${questions.length}. ${messageFinal(score, questions.length)}`;
     boutonSuivant.hidden = true;
     boutonRejouer.hidden = false;
     boutonRejouer.focus();
