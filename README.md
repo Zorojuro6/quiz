@@ -2,7 +2,7 @@
 
 Petit quiz interactif en HTML, CSS et JavaScript. Les questions sont lues dans un fichier JSON : pour en ajouter, il suffit de modifier `questions.json`, sans toucher au code.
 
-Site en ligne : 
+Site en ligne : https://zorojuro6.github.io/quiz/
 
 ## Fonctionnalités
 
@@ -13,7 +13,7 @@ Site en ligne :
 - Bouton « Question suivante », puis écran de fin avec le score et un message selon le résultat
 - Bouton « Rejouer » qui remet le score à zéro
 - Utilisable entièrement au clavier (`Tab` et `Entrée`) : le focus passe automatiquement sur « Question suivante », puis sur « Rejouer »
-- Le résultat de chaque réponse est annoncé aux lecteurs d'écran (`aria-live`)
+- Le message de retour est marqué `aria-live="polite"` pour être annoncé par les lecteurs d'écran (non testé avec un lecteur d'écran)
 - Si le fichier de questions ne peut pas être chargé, un message d'erreur s'affiche
 
 ## Utilisation
@@ -22,7 +22,7 @@ Le quiz lit `questions.json` avec `fetch`, que le navigateur bloque quand la pag
 
 1. Cloner le dépôt :
    ```
-   git clone <adresse-du-depot>
+   git clone https://github.com/Zorojuro6/quiz.git
    cd quiz
    ```
 2. Lancer un serveur, au choix :
@@ -66,6 +66,7 @@ quiz/
 - Les questions sont toujours dans le même ordre
 - Le score n'est pas conservé : il disparaît au rechargement de la page
 - Testé uniquement dans Chrome
+- Recharger la page pendant une partie la recommence depuis le début
 
 ## Améliorations possibles
 
