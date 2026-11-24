@@ -1,9 +1,21 @@
-const questions =[
-    {texte: "Quelle est la capitale du Canada ?", choix: ["Vancouver", "Ottawa", "Toronto", "Montréal"], bonne: 1},
-    {texte: "Quel langage est principalement utilisé pour structurer une page web ?", choix: ["Java", "Python", "HTML", "CSS"], bonne: 2},
-    {texte: "Le Soleil est une planète.", choix: ["Vrai", "Faux"], bonne: 1},
-];
+const questions = [];
 
+async function demarrer() {
+    try {
+        const reponse = await fetch("questions.json");
+        if (!reponse.ok) {
+            throw new Error(`Erreur HTTP ${reponse.status}`);
+        }
+        questions = await reponse.json();
+        afficher(0);
+    } catch(erreur) {
+        zoneQuestion.textContent = "Impossible de charger les questions.";
+        console.error(erreur);
+    }
+}
+
+demarrer();
+   
 const zoneQuestion = document.querySelector("#question");
 const zoneReponses = document.querySelector("#reponses");
 const zoneRetour = document.querySelector("#retour");
@@ -68,4 +80,3 @@ boutonRejouer.addEventListener("click", () => {
     afficher(0);
 });
 
-afficher(0);
